@@ -7,6 +7,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   width: 100%;
   height: 60px;
@@ -68,17 +72,20 @@ main {
   align-items: center;
   justify-content: space-around;
 
-  /* Adicionando bolinhas */
-  background-image: radial-gradient(
-      circle at 20% 30%,
-      #40985e 40px,
-      transparent 0
-    ),
-    radial-gradient(circle at 80% 70%, #0a1a2f 30px, transparent 0),
+  background: radial-gradient(circle at 80% 70%, #0a1a2f 30px, transparent 0),
     radial-gradient(circle at 50% 90%, #d1cb95 25px, transparent 0),
     radial-gradient(circle at 30% 60%, #40985e 80px, transparent 0),
     radial-gradient(circle at 20% 10%, #1a644e 90px, transparent 0),
-    radial-gradient(circle at 10% 80%, #04373b 100px, transparent 0);
+    radial-gradient(circle at 10% 80%, #04373b 100px, transparent 0),
+    /* Novas bolinhas espalhadas */
+      radial-gradient(circle at 70% 20%, #1a644e 70px, transparent 0),
+    radial-gradient(circle at 85% 40%, #04373b 90px, transparent 0),
+    radial-gradient(circle at 40% 30%, #0a1a2f 50px, transparent 0),
+    radial-gradient(circle at 60% 55%, #40985e 60px, transparent 0),
+    radial-gradient(circle at 25% 85%, #d1cb95 35px, transparent 0),
+    radial-gradient(circle at 90% 80%, #04373b 110px, transparent 0);
+
+  background-color: white; /* caso falhe, mantém um fundo escuro */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -86,6 +93,7 @@ main {
 #ods-video {
   width: 50%;
   height: 500px;
+  border-radius: 1rem;
 }
 
 .intro_info_box {
@@ -97,7 +105,17 @@ main {
   font-size: 1.25rem;
   border-radius: 1rem;
   padding: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+  cursor: pointer;
 }
+
+/* Animação hover das boxes */
+.intro_info_box:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 26px rgba(0, 128, 78, 0.25);
+}
+
 
 #objective {
   display: flex;
@@ -132,6 +150,16 @@ main {
   padding: 20px;
   text-align: justify;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+  cursor: pointer;
+}
+
+/* Animação hover das boxes */
+.objective_boxes div:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 26px rgba(0, 128, 78, 0.25);
+  background-color: #ffffff;
 }
 
 .objective_boxes h2 {
@@ -152,6 +180,8 @@ main {
   justify-content: center;
   align-items: center;
   background-color: white;
+  background-image: url(../images/front-view-green-apple-stethoscope.jpg);
+  background-size: cover;
   padding: 4em 0;
 }
 
@@ -165,7 +195,7 @@ main {
   background-color: #4c9f38;
   border-radius: 1rem;
   color: beige;
-  padding: 4rem 1rem;
+  padding: 4rem 2rem;
   font-family: "Elms Sans", "Arial", "Times New Roman";
 }
 
